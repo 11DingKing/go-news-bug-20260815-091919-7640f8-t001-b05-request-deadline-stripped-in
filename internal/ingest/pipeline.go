@@ -157,7 +157,7 @@ func (p *Pipeline) worker() {
 func (p *Pipeline) process(item workItem) {
 	// The worker forwards the request-scoped context so a client deadline is
 	// honoured all the way down to the store write.
-	err := p.store.Append(context.Background(), item.ev)
+	err := p.store.Append(item.ctx, item.ev)
 	if err != nil {
 		err = fmt.Errorf("ingest %s#%d: %w", item.ev.JobID, item.ev.Seq, err)
 		p.mu.Lock()
