@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "source": "self_built",
+  "workflow": "codex_gold_fix",
+  "bug_category": "context",
+  "reproducibility": "stable",
+  "difficulty": "advanced",
+  "target_bug_count": 1,
+  "symptom_type": "cancellation_failure",
+  "reproduction_command": "go test -run TestDeadlinePropagatesThroughPipeline -count=1 ./internal/ingest/",
+  "upstream_issue": null
+}
